@@ -4,12 +4,12 @@ url: "http://ironzhang.github.io"    # the protocol and hostname of your site, e
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  One or more sentences introducing this blog.
+  iron's blog
 
 # Your information
-email: ushn2018@hotmail.com
+#email: ushn2018@hotmail.com
 author: ironzhang
-avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
+avatar: "//static.zybuluo.com/ironzhang/zf35x6vdizyhyax3cyd078hz/biplane.jpg"
 profile: iron, go programmer
 #twitter_username: twitter_username
 #github_username:  github_username
