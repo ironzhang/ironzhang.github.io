@@ -3,40 +3,13 @@
 ---
 @charset "utf-8";
 
-
-
-// Font variables
-$font-name: libretto-icons;
-$font-path-file-name: {{ site.baseurl }}/assets/fonts/$font-name/$font-name;
-
-@font-face {
-    font-family: $font-name;
-    src: url($font-path-file-name+'.eot'); /* IE9 Compat Modes */
-    src: url($font-path-file-name+'.woff') format('woff'), /* Pretty Modern Browsers */
-         url($font-path-file-name+'.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url($font-path-file-name+'.svg#font_name') format('svg'); /* Legacy iOS */
-}
-
-
-
-// Our variables
-$base-font-family: "Libre Baskerville", Baskerville, "Book Antiqua", Georgia, Times, serif;
-$base-font-size:   17px;
-$base-font-weight: 400;
-$base-line-height: 2;
-
+$base-font-family: "Open Sans", "Helvetica Neue", "DejaVu Sans", Arial, "PingFang SC", "Noto Sans CJK SC", "Hiragino Sans GB", "微软雅黑",  Helvetica, sans-serif;
+$base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
 
-$spacing-unit:     30px;
-
-$brand-color:      #787065;
-$background-color: #f2f1ed;
-$text-color:       #363431;
-$title-color:      #943526;
-
-$grey-color:       #a09a92;
-$grey-color-light: lighten($grey-color, 30%);
-$grey-color-dark:  darken($grey-color, 25%);
+$code-font-family:   Menlo, Monaco, Consolas, "DejaVu Sans Mono", "Liberation Mono", "文泉驿等宽微米黑", "Courier New", Courier, SimSun, monospace;
+$code-font-size:     15px;
 
 // Width of the content area
 $content-width:    800px;
@@ -44,15 +17,14 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$color-link: #036;
+$color-link-hover: #069;
 
+$header-bg: #607D8B;
+$header-bg-hover: #78909C;
+$header-link: #CFD8DC;
+$header-fg: #FFF;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
@@ -64,6 +36,8 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "animate",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "easybook"
 ;
