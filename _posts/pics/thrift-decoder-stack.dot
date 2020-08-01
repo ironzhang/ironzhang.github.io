@@ -1,0 +1,436 @@
+digraph G {
+	rankdir=LR;
+	{
+		node[style="invis"]
+		0->1->2->3->4->5->6->7->8->9->10->11->12->13->14->15->16->17->18->19->20->21->22->23->24->25->26->27->28->29->30->31->32->33->34->35->36->37->38->39->40->41->42->43->44->45->46->47->48->49->50->51->52->53->54[style="invis"]
+	}
+
+	state0->state1->state2->state3->state4->state5->state7->state9->state11->state13->state15->state17->state19->state21->state23->state25->state27->state29->state31->state33->state35->state37->state39->state41->state43->state45->state47->state49->state51->state52->state53->state54
+
+	{
+		rank=same;
+		0;
+		state0[shape=plain, label="TC_DM_STATE_MESSAGE_BEGIN"]
+	}
+
+	{
+		rank=same;
+		1;
+		state1[shape=plain, label="TC_DM_STATE_STRUCT_BEGIN"]
+		stack1[shape=record, label="TC_DM_STATE_MESSAGE_END"]
+	}
+
+	{
+		rank=same;
+		2;
+		state2[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+		stack2[shape=record, label="Struct.User|TC_DM_STATE_MESSAGE_END"]
+	}
+
+	{
+		rank=same;
+		3;
+		state3[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+		stack3[shape=record, label="id,type=I32,seq=1|Struct.User|TC_DM_STATE_MESSAGE_END"]
+	}
+
+	{
+		rank=same;
+		4;
+		state4[shape=plain, label="TC_DM_STATE_FIELD_END"]
+		stack4[shape=record, label="value=1|id,type=I32,seq=1|Struct.User|TC_DM_STATE_MESSAGE_END"]
+	}
+
+	{
+		{
+			rank=same;
+			5;
+			state5[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack5[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			6;
+			node5_user[shape=record, label="id,type=I32,seq=1,value=1"]
+		}
+		stack5:f0->node5_user
+	}
+
+	{
+		{
+			rank=same;
+			7;
+			state7[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+			stack7[shape=record, label="name,type=string,seq=2|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			8;
+			node7_user[shape=record, label="id,type=I32,seq=1,value=1"]
+		}
+		stack7:f0->node7_user
+	}
+
+	{
+		{
+			rank=same;
+			9;
+			state9[shape=plain, label="TC_DM_STATE_FIELD_END"]
+			stack9[shape=record, label="value=zhanghui|name,type=string,seq=2|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			10;
+			node9_user[shape=record, label="id,type=I32,seq=1,value=1"]
+		}
+		stack9:f0->node9_user
+	}
+
+	{
+		{
+			rank=same;
+			11;
+			state11[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack11[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			12;
+			node11_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+		}
+		stack11:f0->node11_user
+	}
+
+	{
+		{
+			rank=same;
+			13;
+			state13[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+			stack13[shape=record, label="address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			14;
+			node13_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+		}
+		stack13:f0->node13_user
+	}
+
+	{
+		{
+			rank=same;
+			15;
+			state15[shape=plain, label="TC_DM_STATE_STRUCT_BEGIN"]
+			stack15[shape=record, label="TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			16;
+			node15_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+		}
+		stack15:f0->node15_user
+	}
+
+	{
+		{
+			rank=same;
+			17;
+			state17[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack17[shape=record, label="Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			18;
+			node17_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+		}
+		stack17:f0->node17_user
+	}
+
+	{
+		{
+			rank=same;
+			19;
+			state19[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+			stack19[shape=record, label="country,type=string,seq=1|Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			20;
+			node19_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+		}
+		stack19:f0->node19_user
+	}
+
+	{
+		{
+			rank=same;
+			21;
+			state21[shape=plain, label="TC_DM_STATE_FIELD_END"]
+			stack21[shape=record, label="value=China|country,type=string,seq=1|Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			22;
+			node21_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+		}
+		stack21:f0->node21_user
+	}
+
+	{
+		{
+			rank=same;
+			23;
+			state23[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack23[shape=record, label="<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			24;
+			node23_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node23_addr[shape=record, label="country,type=string,seq=1,value=China"]
+		}
+		stack23:f0->node23_user
+		stack23:f1->node23_addr
+	}
+
+	{
+		{
+			rank=same;
+			25;
+			state25[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+			stack25[shape=record, label="province,type=string,seq=2|<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			26;
+			node25_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node25_addr[shape=record, label="country,type=string,seq=1,value=China"]
+		}
+		stack25:f0->node25_user
+		stack25:f1->node25_addr
+	}
+
+	{
+		{
+			rank=same;
+			27;
+			state27[shape=plain, label="TC_DM_STATE_FIELD_END"]
+			stack27[shape=record, label="value=zhejiang|province,type=string,seq=2|<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			28;
+			node27_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node27_addr[shape=record, label="country,type=string,seq=1,value=China"]
+		}
+		stack27:f0->node27_user
+		stack27:f1->node27_addr
+	}
+
+	{
+		{
+			rank=same;
+			29;
+			state29[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack29[shape=record, label="<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			30;
+			node29_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node29_addr[shape=record, label="country,type=string,seq=1,value=China|province,type=string,seq=2,value=zhejiang"]
+		}
+		stack29:f0->node29_user
+		stack29:f1->node29_addr
+	}
+
+	{
+		{
+			rank=same;
+			31;
+			state31[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+			stack31[shape=record, label="city,type=string,seq=3|<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			32;
+			node31_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node31_addr[shape=record, label="country,type=string,seq=1,value=China|province,type=string,seq=2,value=zhejiang"]
+		}
+		stack31:f0->node31_user
+		stack31:f1->node31_addr
+	}
+
+	{
+		{
+			rank=same;
+			33;
+			state33[shape=plain, label="TC_DM_STATE_FIELD_END"]
+			stack33[shape=record, label="value=wenzhou|city,type=string,seq=3|<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			34;
+			node33_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node33_addr[shape=record, label="country,type=string,seq=1,value=China|province,type=string,seq=2,value=zhejiang"]
+		}
+		stack33:f0->node33_user
+		stack33:f1->node33_addr
+	}
+
+	{
+		{
+			rank=same;
+			35;
+			state35[shape=plain, label="TC_DM_STATE_FIELD_END"]
+			stack35[shape=record, label="value=wenzhou|city,type=string,seq=3|<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			36;
+			node35_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+			node35_addr[shape=record, label="country,type=string,seq=1,value=China|province,type=string,seq=2,value=zhejiang"]
+		}
+		stack35:f0->node35_user
+		stack35:f1->node35_addr
+	}
+
+  {
+  	{
+  		rank=same;
+  		37;
+  		state37[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+  		stack37[shape=record, label="<f1> Struct.Address|TC_DM_STATE_FIELD_END|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+  	}
+  	{
+  		rank=same;
+  		38;
+  		node37_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+  		node37_addr[shape=record, label="country,type=string,seq=1,value=China|province,type=string,seq=2,value=zhejiang|city,type=string,seq=3,value=wenzhou"]
+  	}
+  	stack37:f0->node37_user
+  	stack37:f1->node37_addr
+  }
+
+  {
+  	{
+  		rank=same;
+  		39;
+  		state39[shape=plain, label="TC_DM_STATE_FIELD_END"]
+  		stack39[shape=record, label="<f1> Value.Struct.Address|address,type=Address,seq=3|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+  	}
+  	{
+  		rank=same;
+  		40;
+  		node39_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui"]
+  		node39_addr[shape=record, label="country,type=string,seq=1,value=China|province,type=string,seq=2,value=zhejiang|city,type=string,seq=3,value=wenzhou"]
+  	}
+  	stack39:f0->node39_user
+  	stack39:f1->node39_addr
+  }
+
+
+  {
+  	{
+  		rank=same;
+  		41;
+  		state41[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+  		stack41[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+  	}
+  	{
+  		rank=same;
+  		42;
+  		node41_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}"]
+  	}
+  	stack41:f0->node41_user
+  }
+
+	{
+		{
+			rank=same;
+			43;
+			state43[shape=plain, label="TC_DM_STATE_FIELD_VALUE"]
+			stack43[shape=record, label="telephone,type=string,seq=4|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			44;
+			node43_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}"]
+		}
+		stack43:f0->node43_user
+	}
+
+	{
+		{
+			rank=same;
+			45;
+			state45[shape=plain, label="TC_DM_STATE_FIELD_END"]
+			stack45[shape=record, label="value=18410971434|telephone,type=string,seq=4|<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			46;
+			node45_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}"]
+		}
+		stack45:f0->node45_user
+	}
+
+	{
+		{
+			rank=same;
+			47;
+			state47[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack47[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			48;
+			node47_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+		stack47:f0->node47_user
+	}
+
+	{
+		{
+			rank=same;
+			49;
+			state49[shape=plain, label="TC_DM_STATE_STRUCT_END"]
+			stack49[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			50;
+			node49_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+		stack49:f0->node49_user
+	}
+
+	{
+		{
+			rank=same;
+			51;
+			state51[shape=plain, label="TC_DM_STATE_MESSAGE_END"]
+			stack51[shape=record, label="<f0> Value.Struct.User"]
+		}
+		{
+			rank=same;
+			52;
+			node51_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+		stack51:f0->node51_user
+	}
+
+	{
+		{
+			rank=same;
+			53;
+			state53[shape=plain, label="TC_DM_STATE_DONE"]
+			stack53[shape=record, label=""]
+		}
+		{
+			rank=same;
+			54;
+			node53_user[shape=record, label="msg|id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+	}
+}

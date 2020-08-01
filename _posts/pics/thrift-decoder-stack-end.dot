@@ -1,0 +1,68 @@
+digraph G {
+	rankdir=LR;
+	{
+		node[style="invis"]
+		47->48->49->50->51->52->53->54[style="invis"]
+	}
+
+	state47->state49->state51->state52->state53->state54
+
+	{
+		{
+			rank=same;
+			47;
+			state47[shape=plain, label="TC_DM_STATE_FIELD_BEGIN"]
+			stack47[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			48;
+			node47_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+		stack47:f0->node47_user
+	}
+
+	{
+		{
+			rank=same;
+			49;
+			state49[shape=plain, label="TC_DM_STATE_STRUCT_END"]
+			stack49[shape=record, label="<f0> Struct.User|TC_DM_STATE_MESSAGE_END"]
+		}
+		{
+			rank=same;
+			50;
+			node49_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+		stack49:f0->node49_user
+	}
+
+	{
+		{
+			rank=same;
+			51;
+			state51[shape=plain, label="TC_DM_STATE_MESSAGE_END"]
+			stack51[shape=record, label="<f0> Value.Struct.User"]
+		}
+		{
+			rank=same;
+			52;
+			node51_user[shape=record, label="id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+		stack51:f0->node51_user
+	}
+
+	{
+		{
+			rank=same;
+			53;
+			state53[shape=plain, label="TC_DM_STATE_DONE"]
+			stack53[shape=record, label=""]
+		}
+		{
+			rank=same;
+			54;
+			node53_user[shape=record, label="msg|id,type=I32,seq=1,value=1|name,type=string,seq=2,value=zhanghui|address,type=Struct.Address,value=\{China,zhejiang,wenzhou\}|telephone,type=string,seq=4,value=18410971434"]
+		}
+	}
+}

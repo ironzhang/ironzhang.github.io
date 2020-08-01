@@ -1,0 +1,8 @@
+digraph G {
+	node[shape=box]
+	thrift_codec_decode_msg -> decode_struct_node
+	{decode_struct_node, decode_map_node, decode_set_node} -> decode_node [dir=both]
+	decode_node ->{thrift_protocol_read_double, thrift_protocol_read_bool, thrift_protocol_read_byte, thrift_protocol_read_i16, thrift_protocol_read_i32, thrift_protocol_read_i64, thrift_protocol_read_string, thrift_protocol_read_binary}
+
+	{rank=same; decode_struct_node; decode_map_node; decode_set_node}
+}

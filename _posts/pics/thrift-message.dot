@@ -1,0 +1,102 @@
+digraph G {
+	node[shape=none];
+
+	message[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="aliceblue">
+	<TR>
+		<TD>message</TD>
+		<TD>AddUser</TD>
+		<TD>T_CALL</TD>
+		<TD>121</TD>
+		<TD port="struct">STRUCT</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	id[bgcolor="yellow" margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="yellow">
+	<TR>
+		<TD port="id">id</TD>
+		<TD>T_I32</TD>
+		<TD>1</TD>
+		<TD>1</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	name[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="aquamarine">
+	<TR>
+		<TD>name</TD>
+		<TD>T_STRING</TD>
+		<TD>2</TD>
+		<TD>zhanghui</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	address[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="cadetblue">
+	<TR>
+		<TD>address</TD>
+		<TD>T_STRUCT</TD>
+		<TD>3</TD>
+		<TD port="struct">STRUCT</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	telephone[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="deepskyblue3">
+	<TR>
+		<TD>telephone</TD>
+		<TD>T_STRING</TD>
+		<TD>4</TD>
+		<TD>18410971434</TD>
+	</TR>
+	</TABLE>
+	>]
+
+
+	country[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="skyblue2">
+	<TR>
+		<TD port="country">country</TD>
+		<TD>T_STRING</TD>
+		<TD>1</TD>
+		<TD>China</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	province[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="skyblue3">
+	<TR>
+		<TD>province</TD>
+		<TD>T_STRING</TD>
+		<TD>2</TD>
+		<TD>zhejiang</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	city[margin=0, label=<
+	<TABLE border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="skyblue4">
+	<TR>
+		<TD>city</TD>
+		<TD>T_STRING</TD>
+		<TD>3</TD>
+		<TD>wenzhou</TD>
+	</TR>
+	</TABLE>
+	>]
+
+	message:struct:s->id:id:n
+	id->name->address->telephone
+	address:struct:s->country:country:n
+	country->province->city
+
+//	{rank=same; message}
+	{rank=same; id; name; address; telephone}
+	{rank=same; country; province; city}
+}

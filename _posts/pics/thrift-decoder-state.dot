@@ -1,0 +1,97 @@
+digraph G {
+	//node[shape=box]
+
+	{
+		node[style="invis"]
+		1->2->3->4->5->6->7->8[style="invis"]
+	}
+
+	{
+		rank=same;
+		1;
+		MessageBegin[label="TC_DM_STATE_MESSAGE_BEGIN", style="filled", fillcolor="gray"];
+		MessageEnd[label="TC_DM_STATE_MESSAGE_END"];
+		Done[label="TC_DM_STATE_DONE", style="filled", fillcolor="gray"];
+	}
+	{
+		rank=same;
+		2;
+		StructBegin_top[label="TC_DM_STATE_STRUCT_BEGIN"];
+		StructEnd_top[label="TC_DM_STATE_STRUCT_END"];
+	}
+	{
+		rank=same;
+		3;
+		FieldBegin_top[label="TC_DM_STATE_FIELD_BEGIN"];
+		FieldEnd_top[label="TC_DM_STATE_FIELD_END"];
+	}
+	{
+		rank=same;
+		4;
+		FieldValue_top[label="Value(TC_DM_STATE_FIELD_VALUE)", style="filled", fillcolor="beige"];
+	}
+	{
+		rank=same;
+		5;
+		StructBegin[label="TC_DM_STATE_STRUCT_BEGIN"]
+		StructEnd[label="TC_DM_STATE_STRUCT_END"];
+		MapBegin[label="TC_DM_STATE_MAP_BEGIN"];
+		MapEnd[label="TC_DM_STATE_MAP_END"];
+		SetBegin[label="TC_DM_STATE_SET_BEGIN"];
+		SetEnd[label="TC_DM_STATE_SET_END"];
+		ListBegin[label="TC_DM_STATE_LIST_BEGIN"];
+		ListEnd[label="TC_DM_STATE_LIST_END"];
+	}
+	{
+		rank=same;
+		6;
+		MapKey[label="TC_DM_STATE_MAP_KEY", style="filled", fillcolor="beige"];
+		MapElement[label="TC_DM_STATE_MAP_ELEMENT"];
+		SetValue[label="TC_DM_STATE_SET_VALUE", style="filled", fillcolor="beige"];
+		SetElement[label="TC_DM_STATE_SET_ELEMENT"];
+		ListValue[label="TC_DM_STATE_LIST_VALUE", style="filled", fillcolor="beige"];
+		ListElement[label="TC_DM_STATE_LIST_ELEMENT"];
+		FieldBegin[label="TC_DM_STATE_FIELD_BEGIN"];
+		FieldEnd[label="TC_DM_STATE_FIELD_END"];
+	}
+	{
+		rank=same;
+		7;
+		MapValue[label="TC_DM_STATE_MAP_VALUE", style="filled", fillcolor="beige"];
+		FieldValue[label="TC_DM_STATE_FIELD_VALUE", style="filled", fillcolor="beige"];
+	}
+	{
+		node[shape=plaintext, fontsize=24, fontcolor="blue"]
+		rank=same;
+		8;
+		Value[label="Value = TC_DM_STATE_FIELD_VALUE | TC_DM_STATE_MAP_KEY | TC_DM_STATE_MAP_VALUE | TC_DM_STATE_SET_VALUE | TC_DM_STATE_LIST_VALUE"];
+	}
+
+	{
+		FieldBegin_top -> FieldEnd_top[style="invis"]
+		MapKey -> MapElement[style="invis"]
+		FieldBegin -> FieldEnd[sytle="invis"]
+		//SetValue -> Value[style="invis"]
+	}
+
+	MessageBegin -> StructBegin_top -> FieldBegin_top -> FieldValue_top
+	FieldValue_top -> {StructBegin, MapBegin, SetBegin, ListBegin}
+	{MapEnd, SetEnd, ListEnd, StructEnd} -> FieldValue_top
+	FieldValue_top -> FieldEnd_top -> FieldBegin_top -> StructEnd_top -> MessageEnd -> Done
+
+	StructBegin -> FieldBegin
+	FieldBegin -> {FieldValue, StructEnd}
+	FieldValue -> FieldEnd -> FieldBegin
+
+	MapBegin -> MapEnd
+	MapBegin -> MapKey -> MapValue -> MapElement
+	MapElement -> {MapKey, MapEnd}
+
+	SetBegin -> SetEnd
+	SetBegin -> SetValue -> SetElement
+	SetElement -> {SetValue, SetEnd}
+
+	ListBegin -> ListEnd
+	ListBegin -> ListValue -> ListElement
+	ListElement -> {ListValue, ListEnd}
+}

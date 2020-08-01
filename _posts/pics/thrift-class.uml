@@ -1,0 +1,25 @@
+@startuml
+
+tc_thrift_t o-- tc_transport_t
+tc_thrift_t o-- tc_encoder_t
+tc_thrift_t o-- tc_decoder_t
+
+tc_transport_t <|-- tc_framed_transport_t
+tc_transport_t <|-- tc_unframed_transport_t
+tc_transport_t <|-- tc_auto_transport_t 
+tc_auto_transport_t *-- tc_framed_transport_t
+tc_auto_transport_t *-- tc_unframed_transport_t
+
+tc_encoder_t *-- tc_protocol_t
+tc_decoder_t o-- tc_decoder_machine_t
+
+tc_protocol_t <|-- tc_binary_protocol_t
+tc_protocol_t <|-- tc_compact_protocol_t
+tc_protocol_t <|-- tc_auto_protocol_t
+tc_auto_protocol_t *-- tc_binary_protocol_t
+tc_auto_protocol_t *-- tc_compact_protocol_t
+
+tc_decoder_machine_t *-- tc_protocol_t
+tc_decoder_machine_t o-- tc_dm_frame_stack_t
+
+@enduml
