@@ -1,0 +1,19 @@
+.PS
+
+w=0.5; h=0.25; x=0.02; y=0.02
+
+Project_A: box "project A" wid w*2 height h*3+2*y
+Project_B: box "project B" wid w*3+2*x height h with .nw at Project_A .ne + (x, 0)
+Lib_A: box "lib A" wid w*2+x height h with .nw at Project_B .sw + (0, -y)
+Lib_B: box "lib B" wid w height h with .nw at Lib_A .sw + (0, -y)
+Lib_C: box "lib C" wid w height h with .nw at Lib_B .ne + (x, 0)
+Lib_D: box "lib D" wid w height 2*h+y with .nw at Lib_A .ne + (x, 0)
+
+Interface: box "std logging interface" wid w*5+3*x with .nw at Project_A .sw + (0, -y)
+
+box "zap" wid w*1.5+x/2 height h*2 with .nw at Interface .sw + (0, -y)
+box "..." wid w*2 height h*2 with .w at last box .e + (x, 0)
+box "logrus" wid w*1.5+x/2 height h*2 with .w at last box .e + (x, 0)
+
+.PE
+
